@@ -1,13 +1,119 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background: #7a0025;
+  margin: 0;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #1d1d26;
+  display: flex;
+  padding: 1rem;
+  justify-content: flex-end;
+}
+
+::placeholder {
+  color: #7a0025;
+}
+:-ms-input-placeholder {
+  color: #7a0025;
+}
+::-ms-input-placeholder {
+  color: #7a0025;
+}
+
+.search {
+  background-color: #1d1d26;
+  border: 2px solid #7a0025;
+  color: white;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.search::-webkit-search-cancel-button {
+  position: relative;
+  right: -10px;
+
+  background: black;
+}
+
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+}
+
+.movie {
+  background-color: #1d1d26;
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  margin: 1rem;
+  width: 250px;
+}
+
+.movie img {
+  max-width: 100%;
+}
+
+.movie-info {
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+.movie-info h3 {
+  margin: 0;
+}
+
+.movie-over {
+  background-color: rgba(0, 0, 0, 0.85);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  max-height: 100%;
+  transform: translateY(102%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.movie:hover .movie-over {
+  transform: translateX(0%);
+}
+
+.tag {
+  background-color: #4e0017;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.tag.green {
+  color: rgb(6, 214, 6);
+}
+.tag.orange {
+  color: rgb(255, 208, 0);
+}
+.tag.red {
+  color: red;
 }
