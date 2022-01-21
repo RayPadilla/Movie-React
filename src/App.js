@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Movie from "./components/Movie";
+import Popup from "reactjs-popup";
 
 //72c5d232e8555335b975c55d55dbd3e5
 
@@ -12,6 +13,11 @@ const SEARCH_API =
 function App() {
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
 
   useEffect(() => {
     getMovies(FEATURED_API);
